@@ -24,14 +24,29 @@ class Characters extends Component {
 
     componentDidMount = () => this.fetchRoster();
 
-    mapImages = data => ({ id: data.id, url: data.url }); 
+    mapImages(data) {
+        return {
+            images: data.map(i => {
+                return {
+                    id: i.id,
+                    url: i.url
+                }
+            })
+        }
+    } 
 
     fetchRoster = () => 
         fetcher.get(ROSTER_ENPOINT, data => this.setState(this.mapImages(data)));
 
+    fetchDetails = id =>
+        fetcher.get(DETAILS_ENDPOINT + id, data => this.setState({ details: data }));
+
+    selectCharacter = id => 
+        this.fetchDetails(id)
+
     render = () => (
             <div>
-                <Roster images={this.state.images} />
+                <Roster images={this.state.images} select={this.selectCharacter} />
                 <Details {...this.state.details} />
             </div>
         )

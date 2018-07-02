@@ -5,11 +5,11 @@ class Roster extends Component {
         super(props);
     }
     render = () => {
-        const images = this.props.images.map(i => {
-            <div key={i.id} className='roster-...'>
-                <img src={i.url} alt="image" />
+        const images = this.props.images.map(i => (
+            <div key={i.id} className='roster-image-container'>
+                <img src={i.url} alt="image" onClick={() => this.props.select(i.id)} />
             </div>
-        })
+        ))
         return (
             <section id="roster">
                 {images}
