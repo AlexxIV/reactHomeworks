@@ -1,0 +1,9 @@
+.pokemon-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.pokemon-wrapper:after {
+    content: "";
+    flex: auto;
+}

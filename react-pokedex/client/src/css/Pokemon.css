@@ -1,0 +1,18 @@
+.single-pokemon {
+    max-width: 200px;
+    border: 5px solid orangered;
+    border-radius: 50%;
+    padding: 35px;
+    margin: 10px;
+}
+
+.single-pokemon img{
+    width: 100%;
+}
+.single-pokemon h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.single-pokemon p {
+    font-size: 14px;
+}

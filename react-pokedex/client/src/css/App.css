@@ -1,0 +1,7 @@
+.App {
+  text-align: center;
+}
+.App .container .form-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+}
